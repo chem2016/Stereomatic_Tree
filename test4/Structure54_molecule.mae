@@ -27,13 +27,18 @@ f_m_ct {
  r_j_Gas_Phase_Energy
  r_j_HOMO
  r_j_LUMO
- i_j_Geometry_convergence_category
+ s_m_job_name
+ s_j_jname
  s_st_EZ_1
  s_st_EZ_2
+ r_j_Final_Energy
+ s_m_subgroup_title
+ s_m_subgroupid
+ b_m_subgroup_collapsed
  i_m_ct_format
  :::
  Structure54_molecule 
-  7 
+  15 
   entry_mol1 
   0
   0
@@ -42,23 +47,28 @@ f_m_ct {
   1
   1
   Optimization 
-  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/calculate_overlap/test/test_molecules/jag_batch_opt_B3LYP_6-31Gss_2/Structure54_molecule_6-31Gss_1_B3LYP_loner1.in 
-  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/calculate_overlap/test/test_molecules/jag_batch_opt_B3LYP_6-31Gss_2/Structure54_molecule_6-31Gss_1_B3LYP_loner1.01.in 
-  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/calculate_overlap/test/test_molecules/jag_batch_opt_B3LYP_6-31Gss_2/Structure54_molecule_6-31Gss_1_B3LYP_loner1.01.mae 
-  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/calculate_overlap/test/test_molecules/jag_batch_opt_B3LYP_6-31Gss_2/Structure54_molecule_6-31Gss_1_B3LYP_loner1.out 
-  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/calculate_overlap/test/test_molecules/jag_batch_opt_B3LYP_6-31Gss_2/Structure54_molecule_6-31Gss_1_B3LYP_loner1.log 
-  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/calculate_overlap/test/test_molecules/jag_batch_opt_B3LYP_6-31Gss_2/Structure54_molecule_6-31Gss_1_B3LYP_loner1.mae 
-  DFT(b3lyp) 
+  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/recursive_stereo/2019-10-25/jag_batch_opt_B3LYP-D3_6-31Gss/Structure54_molecule_loner1.in 
+  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/recursive_stereo/2019-10-25/jag_batch_opt_B3LYP-D3_6-31Gss/Structure54_molecule_loner1.01.in 
+  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/recursive_stereo/2019-10-25/jag_batch_opt_B3LYP-D3_6-31Gss/Structure54_molecule_loner1.01.mae 
+  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/recursive_stereo/2019-10-25/jag_batch_opt_B3LYP-D3_6-31Gss/Structure54_molecule_loner1.out 
+  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/recursive_stereo/2019-10-25/jag_batch_opt_B3LYP-D3_6-31Gss/Structure54_molecule_loner1.log 
+  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/recursive_stereo/2019-10-25/jag_batch_opt_B3LYP-D3_6-31Gss/Structure54_molecule_loner1.mae 
+  DFT(b3lyp-d3) 
   6-31g** 
   125
-  -232.567112894812
-  -0.475298241163341
-  -0.314277760146076
-  0
+  -232.573207974996
+  -0.475304324006138
+  -0.314285916904726
+  jag_batch_opt_B3LYP-D3_6-31Gss 
+  Structure54_molecule_loner1 
   6_1_2_3_Z 
   4_5_6_1_Z 
+  -232.573207974996
+  jag_batch_opt_B3LYP-D3_6-31Gss_canonical1 
+  jag_batch_opt_B3LYP-D3_6-31Gss_canonical1 
+  0
   2
- m_depend[17] { 
+ m_depend[18] { 
   # First column is dependency index #
   i_m_depend_dependency
   s_m_depend_property
@@ -77,9 +87,10 @@ f_m_ct {
   12 20 r_j_Gas_Phase_Energy 
   13 20 r_j_HOMO 
   14 20 r_j_LUMO 
-  15 20 i_j_Geometry_convergence_category 
+  15 30 s_m_job_name 
   16 10 s_st_EZ_1 
   17 10 s_st_EZ_2 
+  18 20 r_j_Final_Energy 
   :::
  } 
  m_atom[13] { 

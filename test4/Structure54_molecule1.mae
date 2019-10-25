@@ -27,13 +27,18 @@ f_m_ct {
  r_j_Gas_Phase_Energy
  r_j_HOMO
  r_j_LUMO
- i_j_Geometry_convergence_category
+ s_m_job_name
+ s_j_jname
  s_st_EZ_1
  s_st_EZ_2
+ r_j_Final_Energy
+ s_m_subgroup_title
+ s_m_subgroupid
+ b_m_subgroup_collapsed
  i_m_ct_format
  :::
  Structure54_molecule1 
-  8 
+  16 
   entry_mol2 
   0
   0
@@ -42,23 +47,28 @@ f_m_ct {
   1
   1
   Optimization 
-  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/calculate_overlap/test/test_molecules/jag_batch_opt_B3LYP_6-31Gss_2/Structure54_molecule1_6-31Gss_1_B3LYP_loner2.in 
-  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/calculate_overlap/test/test_molecules/jag_batch_opt_B3LYP_6-31Gss_2/Structure54_molecule1_6-31Gss_1_B3LYP_loner2.01.in 
-  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/calculate_overlap/test/test_molecules/jag_batch_opt_B3LYP_6-31Gss_2/Structure54_molecule1_6-31Gss_1_B3LYP_loner2.01.mae 
-  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/calculate_overlap/test/test_molecules/jag_batch_opt_B3LYP_6-31Gss_2/Structure54_molecule1_6-31Gss_1_B3LYP_loner2.out 
-  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/calculate_overlap/test/test_molecules/jag_batch_opt_B3LYP_6-31Gss_2/Structure54_molecule1_6-31Gss_1_B3LYP_loner2.log 
-  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/calculate_overlap/test/test_molecules/jag_batch_opt_B3LYP_6-31Gss_2/Structure54_molecule1_6-31Gss_1_B3LYP_loner2.mae 
-  DFT(b3lyp) 
+  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/recursive_stereo/2019-10-25/jag_batch_opt_B3LYP-D3_6-31Gss/Structure54_molecule1_loner2.in 
+  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/recursive_stereo/2019-10-25/jag_batch_opt_B3LYP-D3_6-31Gss/Structure54_molecule1_loner2.01.in 
+  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/recursive_stereo/2019-10-25/jag_batch_opt_B3LYP-D3_6-31Gss/Structure54_molecule1_loner2.01.mae 
+  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/recursive_stereo/2019-10-25/jag_batch_opt_B3LYP-D3_6-31Gss/Structure54_molecule1_loner2.out 
+  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/recursive_stereo/2019-10-25/jag_batch_opt_B3LYP-D3_6-31Gss/Structure54_molecule1_loner2.log 
+  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/recursive_stereo/2019-10-25/jag_batch_opt_B3LYP-D3_6-31Gss/Structure54_molecule1_loner2.mae 
+  DFT(b3lyp-d3) 
   6-31g** 
   120
-  -232.258244578019
-  -0.246927377707046
-  0.00256739250765644
-  0
+  -232.26334175845
+  -0.24692777699829
+  0.00256689956993672
+  jag_batch_opt_B3LYP-D3_6-31Gss 
+  Structure54_molecule1_loner2 
   6_1_2_3_Z 
   4_5_6_1_Z 
+  -232.26334175845
+  jag_batch_opt_B3LYP-D3_6-31Gss_canonical1 
+  jag_batch_opt_B3LYP-D3_6-31Gss_canonical1 
+  0
   2
- m_depend[17] { 
+ m_depend[18] { 
   # First column is dependency index #
   i_m_depend_dependency
   s_m_depend_property
@@ -77,9 +87,10 @@ f_m_ct {
   12 20 r_j_Gas_Phase_Energy 
   13 20 r_j_HOMO 
   14 20 r_j_LUMO 
-  15 20 i_j_Geometry_convergence_category 
+  15 30 s_m_job_name 
   16 10 s_st_EZ_1 
   17 10 s_st_EZ_2 
+  18 20 r_j_Final_Energy 
   :::
  } 
  m_atom[12] { 
@@ -97,18 +108,18 @@ f_m_ct {
   i_m_label_color
   s_m_label_user_text
   :::
-  1 2 -1.395930 0.000000 0.000000 900 2 6 A0A0A0  C1  %NM  5 "" 
-  2 2 -0.697965 -1.208910 0.000000 900 2 6 A0A0A0  C2  %NM  5 "" 
-  3 2 0.697965 -1.208910 0.000000 900 2 6 A0A0A0  C3  %NM  5 "" 
-  4 2 1.395930 0.000000 0.000000 900 2 6 A0A0A0  C4  %NM  5 "" 
-  5 2 0.697965 1.208910 0.000000 900 2 6 A0A0A0  C5  %NM  5 "" 
-  6 2 -0.697965 1.208910 0.000000 900 2 6 A0A0A0  C6  %NM  5 "" 
-  7 41 -2.482388 0.000000 -0.000000 900 21 1 FFFFFF  H7  %NM  5 "" 
-  8 41 -1.241194 -2.149811 -0.000000 900 21 1 FFFFFF  H8  %NM  5 "" 
-  9 41 1.241194 -2.149811 -0.000000 900 21 1 FFFFFF  H9  %NM  5 "" 
-  10 41 2.482388 0.000000 -0.000000 900 21 1 FFFFFF  H10  %NM  5 "" 
-  11 41 1.241194 2.149811 -0.000000 900 21 1 FFFFFF  H11  %NM  5 "" 
-  12 41 -1.241194 2.149811 -0.000000 900 21 1 FFFFFF  H12  %NM  5 "" 
+  1 2 1.395930 0.000000 0.000000 900 2 6 A0A0A0  C1  %NM  5 "" 
+  2 2 0.697965 1.208910 0.000000 900 2 6 A0A0A0  C2  %NM  5 "" 
+  3 2 -0.697965 1.208910 0.000000 900 2 6 A0A0A0  C3  %NM  5 "" 
+  4 2 -1.395930 0.000000 0.000000 900 2 6 A0A0A0  C4  %NM  5 "" 
+  5 2 -0.697965 -1.208910 0.000000 900 2 6 A0A0A0  C5  %NM  5 "" 
+  6 2 0.697965 -1.208910 0.000000 900 2 6 A0A0A0  C6  %NM  5 "" 
+  7 41 2.482388 0.000000 0.000000 900 21 1 FFFFFF  H7  %NM  5 "" 
+  8 41 1.241194 2.149811 0.000000 900 21 1 FFFFFF  H8  %NM  5 "" 
+  9 41 -1.241194 2.149811 0.000000 900 21 1 FFFFFF  H9  %NM  5 "" 
+  10 41 -2.482388 0.000000 0.000000 900 21 1 FFFFFF  H10  %NM  5 "" 
+  11 41 -1.241194 -2.149811 0.000000 900 21 1 FFFFFF  H11  %NM  5 "" 
+  12 41 1.241194 -2.149811 0.000000 900 21 1 FFFFFF  H12  %NM  5 "" 
   :::
  } 
  m_bond[12] { 

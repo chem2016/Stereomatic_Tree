@@ -7,7 +7,21 @@ from schrodinger.structure import StructureReader
 from generate_stereomatic_step1 import stereomatic_descriptor
 
 def get_bond_order(st, at1, at2):
-    
+    """
+    A function to get bond order base on build-in stereomatic desciptor
+
+    :type  st: schrodinger.structure
+    :param st: structure of a molecule
+
+    :type  at1: schrodinger.structure.atom
+    :param at1: atom1 instance
+
+    :type  at2: schrodinger.structure.atom
+    :param at2: atom2 instance
+
+    return: a float number that represent the bond order between at1 and at2
+    """
+
     if at1.atomic_number < at2.atomic_number:
         atoms_pair = '%s_%s'%(at1.element, at2.element)
     else:
@@ -18,6 +32,9 @@ def get_bond_order(st, at1, at2):
 
 
 class Node:
+    """
+    A data structure to convert a molecule into a tree structure
+    """
 
     def __init__(self, value, idx, element, charge, parent_idx, visited):
         self.value = value
@@ -43,6 +60,18 @@ class Node:
         self.children.append(Node(value, idx, element, charge, parent_idx, visited))
     
 def get_nodes_by_level(root, k, array):
+    """
+    A function to find all the nodes on its kth level
+
+    :type  root: Node
+    :param root: root node of a tree
+
+    :type  k: int
+    :param k: kth level of tree root
+
+    :type  array: list
+    :param array: a queue to take all the nodes on kth level
+    """
 
     if root is None:
         return
@@ -55,6 +84,15 @@ def get_nodes_by_level(root, k, array):
 
 
 def get_stereomatic_desc(st, tree):
+    """
+    A function to update all the nodes of a tree with stereomatic value
+
+    :type  st: schrodinger.structure
+    :param st: structure of a molecule
+
+    :type  tree: Node
+    :param tree: The tree structure of st
+    """
 
     origin = tree.idx
     # print(tree)
@@ -71,6 +109,9 @@ def get_stereomatic_desc(st, tree):
         get_stereomatic_desc(st, child)
 
 def sum_bonded_atomic(atom):
+    """
+    A helper function to calculate the sum of atomic numbers of bonded atom
+    """
 
     sum = 0
     for bonded_atom in atom.bonded_atoms:
@@ -86,7 +127,7 @@ def sort_atom_by_atomic(st):
 
 def calculate_overlap(arr1, arr2):
     """
-    first ensure two array has the same length after packing
+    A function to calculate two arrays of nodes with same dimension
 
     arr1: [node1, node2, node3, etc]
     arr2: [node1, node2, node3, etc]
@@ -98,7 +139,17 @@ def calculate_overlap(arr1, arr2):
     return sum
 
 def generate_tree(maefile, origin):
+    """
+    A helper function to generate tree structure from a given maefile and origin
 
+    :type  maefile: str
+    :param maefile: name of the maefile, endwith .mae
+
+    :type  origin: int
+    :param origin: atom of interest
+
+    return tree structure
+    """
     print(f'Processing {maefile}')
     st = next(StructureReader(maefile))
     print(f'Using atom {origin} ({st.atom[origin].element}) as origin.\n')
@@ -117,7 +168,7 @@ def print_node(node_arr):
 
 def pack_array(arr1, arr2):
     """
-    A function to added node with zero values to the corresponding array
+    A function to pack two arrays with new Nodes to ensure same dimensitionality
     """
     # for item1, item2 in itertools.zip_longest(arr1, arr2, fillvalue=Node(0, origin, st.atom[origin].element, None, set())): 
 
