@@ -1,0 +1,103 @@
+{ 
+ s_m_m2io_version
+ :::
+ 2.0.0 
+} 
+
+f_m_ct { 
+ s_m_title
+ s_m_entry_id
+ s_m_entry_name
+ i_f3d_flags
+ r_f3d_energy
+ s_m_Source_Path
+ s_m_Source_File
+ i_m_Source_File_Index
+ s_st_Chirality_1
+ i_m_ct_format
+ :::
+ target 
+  14 
+  entry 
+  0
+  0
+  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/mats 
+  Target.mae 
+  1
+  9_R_10_6_11 
+  2
+ m_depend[1] { 
+  # First column is dependency index #
+  i_m_depend_dependency
+  s_m_depend_property
+  :::
+  1 10 s_st_Chirality_1 
+  :::
+ } 
+ m_atom[20] { 
+  # First column is atom index #
+  i_m_mmod_type
+  r_m_x_coord
+  r_m_y_coord
+  r_m_z_coord
+  i_m_residue_number
+  i_m_color
+  i_m_atomic_number
+  s_m_color_rgb
+  s_m_label_format
+  i_m_label_color
+  s_m_label_user_text
+  b_st_NoSrcChirality
+  :::
+  1 25 -0.541134 -2.028269 -1.611416 900 43 7 5757FF  "%NM"  5 ""  <>
+  2 2 -0.791698 -2.741133 -2.748575 900 2 6 A0A0A0  ""  1 ""  <>
+  3 2 -0.784979 -1.936980 -4.074610 900 2 6 A0A0A0  ""  1 ""  <>
+  4 25 -0.529205 -0.600222 -3.966243 900 43 7 5757FF  ""  1 ""  <>
+  5 2 -0.289799 0.015771 -2.767179 900 2 6 A0A0A0  ""  1 ""  <>
+  6 2 -0.295623 -0.681347 -1.617644 900 2 6 A0A0A0  ""  1 ""  <>
+  7 15 -1.002487 -2.502719 -5.153466 900 70 8 FF2F2F  ""  1 ""  <>
+  8 15 -1.014646 -3.958330 -2.753186 900 70 8 FF2F2F  ""  1 ""  <>
+  9 109 0.000000 0.000000 0.000000 900 13 16 E1E11E  ""  1 ""  1
+  10 15 -0.477187 1.453683 -0.000000 900 70 8 FF2F2F  ""  1 ""  <>
+  11 3 1.780000 0.000000 0.000000 900 2 6 A0A0A0  ""  1 ""  <>
+  12 3 2.280000 0.707107 1.224745 900 2 6 A0A0A0  ""  1 ""  <>
+  13 43 -0.550895 -2.574080 -0.760555 900 21 1 FFFFFF  ""  1 ""  <>
+  14 43 -0.530211 -0.097990 -4.843586 900 21 1 FFFFFF  ""  1 ""  <>
+  15 41 -0.104111 1.081637 -2.853358 900 21 1 FFFFFF  ""  1 ""  <>
+  16 41 2.143333 0.513831 -0.889981 900 21 1 FFFFFF  ""  1 ""  <>
+  17 41 2.143333 -1.027662 -0.000000 900 21 1 FFFFFF  ""  1 ""  <>
+  18 41 3.370000 0.707107 1.224745 900 21 1 FFFFFF  ""  1 ""  <>
+  19 41 1.916667 1.734769 1.224745 900 21 1 FFFFFF  ""  1 ""  <>
+  20 41 1.916667 0.193276 2.114726 900 21 1 FFFFFF  ""  1 ""  <>
+  :::
+ } 
+ m_bond[20] { 
+  # First column is bond index #
+  i_m_from
+  i_m_to
+  i_m_order
+  :::
+  1 1 2 1
+  2 1 6 1
+  3 1 13 1
+  4 2 3 1
+  5 2 8 2
+  6 3 4 1
+  7 3 7 2
+  8 4 5 1
+  9 4 14 1
+  10 5 6 2
+  11 5 15 1
+  12 6 9 1
+  13 9 10 2
+  14 9 11 1
+  15 11 12 1
+  16 11 16 1
+  17 11 17 1
+  18 12 18 1
+  19 12 19 1
+  20 12 20 1
+  :::
+ } 
+} 
+
