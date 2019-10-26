@@ -2,9 +2,61 @@ import random
 import sys
 import itertools
 import numpy as np
+import time
+import argparse
+import tracemalloc
 from schrodinger.infra import mm
 from schrodinger.structure import StructureReader
 from generate_stereomatic_step1 import stereomatic_descriptor
+
+def parse_args():
+    """
+    parse commandline arguments
+    """
+
+    parser = argparse.ArgumentParser(
+        description="calculate stereomatic overlap between two molecules give specific atoms and level",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+    )
+
+    parser.add_argument(
+        'st_1',
+        type=str,
+        help='name of the molecule1 st file'
+    )
+
+    parser.add_argument(
+        'st_2',
+        type=str,
+        help='name of the molecule2 st file'
+    )
+
+    parser.add_argument(
+        '-atom_of_interest',
+        dest='atom_pair',
+        metavar='<Xi>',
+        default=(1, 1),
+        nargs=2,
+        type=int,
+        help='specify two atom indexes for comparison'
+    )
+
+    parser.add_argument(
+        '-level',
+        dest='level',
+        type=int,
+        help='the level of the overlap one wants to calculate'
+    )
+
+    parser.add_argument(
+        '-debug',
+        default=False,
+        dest='debug',
+        action='store_true',
+        help='debug option to print all the descriptors'  
+    )
+
+    return parser.parse_args()
 
 def get_bond_order(st, at1, at2):
     """
@@ -83,7 +135,7 @@ def get_nodes_by_level(root, k, array):
             get_nodes_by_level(child, k-1, array)
 
 
-def get_stereomatic_desc(st, tree):
+def get_stereomatic_desc(st, tree, sorted_atoms):
     """
     A function to update all the nodes of a tree with stereomatic value
 
@@ -97,7 +149,7 @@ def get_stereomatic_desc(st, tree):
     origin = tree.idx
     # print(tree)
     # for at in st.atom:
-    for at in sort_atom_by_atomic(st):
+    for at in sorted_atoms:
         value = get_bond_order(st, st.atom[origin], at)
         if value > 0.5:
             if at.index not in tree.visited:
@@ -106,7 +158,7 @@ def get_stereomatic_desc(st, tree):
 
     for child in tree.children:
 #        print(f'child {child.idx} of {origin} \n', child)
-        get_stereomatic_desc(st, child)
+        get_stereomatic_desc(st, child, sorted_atoms)
 
 def sum_bonded_atomic(atom):
     """
@@ -120,7 +172,9 @@ def sum_bonded_atomic(atom):
     return sum
 
 def sort_atom_by_atomic(st):
-
+    """
+    A helper method to sort the atoms of a structure base on their atomic_number of itself and neighbour
+    """
     retArr = [at for at in st.atom]
     
     return sorted(retArr, key=lambda atom: (atom.atomic_number, sum_bonded_atomic(atom)))
@@ -152,9 +206,10 @@ def generate_tree(maefile, origin):
     """
     print(f'Processing {maefile}')
     st = next(StructureReader(maefile))
+    sorted_atoms = sort_atom_by_atomic(st)
     print(f'Using atom {origin} ({st.atom[origin].element}) as origin.\n')
     root = Node(None, origin, st.atom[origin].element, st.atom[origin].partial_charge, None, set())
-    get_stereomatic_desc(st, root)
+    get_stereomatic_desc(st, root, sorted_atoms)
 
     return root
 
@@ -170,7 +225,7 @@ def pack_array(arr1, arr2):
     """
     A function to pack two arrays with new Nodes to ensure same dimensitionality
     """
-    # for item1, item2 in itertools.zip_longest(arr1, arr2, fillvalue=Node(0, origin, st.atom[origin].element, None, set())): 
+    # for item1, item2 in itertools.zip_longest(arr1, arr2, fillvalue=Node(0, origin, st.atom[origin].element, charge, None, set())): 
 
     retArr1 = []
     retArr2 = []
@@ -196,11 +251,13 @@ def pack_array(arr1, arr2):
 
 def main():
 
-    maefile1 = sys.argv[1]
-    origin1 = int(sys.argv[2])
-    maefile2 = sys.argv[3]
-    origin2 = int(sys.argv[4])
-    level = int(sys.argv[5])
+    args = parse_args()
+    print("args: ", args)
+
+    maefile1 = args.st_1
+    origin1, origin2 = args.atom_pair
+    maefile2 = args.st_2
+    level = args.level
 
     tree1 = generate_tree(maefile1, origin1)
     tree2 = generate_tree(maefile2, origin2)
@@ -209,29 +266,27 @@ def main():
     retArr1, retArr2 = [], []
     get_nodes_by_level(tree1, level, retArr1)
     get_nodes_by_level(tree2, level, retArr2)
-
-    print('arr1: -------------')
-    print_node(retArr1)
-    print('arr2: -------------')
-    print_node(retArr2)
-
     arr1_packed, arr2_packed = pack_array(retArr1, retArr2)
-
-    # print('arr1_packed: ', print_node(arr1_packed))
-    # print('arr2_packed: ', print_node(arr2_packed))
-
     difference = calculate_overlap(arr1_packed, arr2_packed)
     overlap = np.exp(-difference)
     print(overlap)
-    # print(tree1)
-    # print(tree1.children)
-    # child = root.children[0]
-    # print(child)
-#    grandchild1 = child.children[0]
-#    print(grandchild1)
-#    grandchild2 = child.children[1]
-#    print(grandchild2)
+
+    if args.debug:
+        print('nodes from tree1: --------------------')
+        print_node(retArr1)
+        print('nodes from tree2: --------------------')
+        print_node(retArr2)
 
 if __name__ == "__main__":
+    start_time = time.time()
+    tracemalloc.start()
     main()
+    snapshot = tracemalloc.take_snapshot()
+    top_stats = snapshot.statistics('lineno')
+
+    print("[ Top 10 ]")
+    for stat in top_stats[:10]:
+        print(stat)
+    print("--- %s seconds ---" % (time.time() - start_time))
+
 
