@@ -31,13 +31,10 @@ f_m_ct {
  i_j_Geometry_convergence_category
  s_j_jname
  r_j_Final_Energy
- s_m_subgroup_title
- s_m_subgroupid
- b_m_subgroup_collapsed
  i_m_ct_format
  :::
  M1 
-  3 
+  1 
   entry 
   0
   0
@@ -58,13 +55,10 @@ f_m_ct {
   -539.571399487909
   -0.211162061715709
   -0.0370359485485129
-  jag_batch_spe_B3LYP-D3_6-31Gss 
+  jag_batch_opt_B3LYP_6-31Gss_3 
   0
-  M1_loner1 
+  M1_6-31Gss_1_B3LYP_loner1 
   -539.571399487909
-  jag_batch_spe_B3LYP-D3_6-31Gss_canonical1 
-  jag_batch_spe_B3LYP-D3_6-31Gss_canonical1 
-  0
   2
  m_depend[17] { 
   # First column is dependency index #

@@ -37,13 +37,10 @@ f_m_ct {
  s_st_EZ_5
  s_st_EZ_6
  r_j_Final_Energy
- s_m_subgroup_title
- s_m_subgroupid
- b_m_subgroup_collapsed
  i_m_ct_format
  :::
  M2 
-  4 
+  2 
   entry 
   0
   0
@@ -64,9 +61,9 @@ f_m_ct {
   -539.907345487853
   -0.371204391712788
   -0.271162417163128
-  jag_batch_spe_B3LYP-D3_6-31Gss 
+  jag_batch_opt_B3LYP_6-31Gss_3 
   3
-  M2_loner2 
+  M2_6-31Gss_1_B3LYP_loner2 
   2_1_7_8_Z 
   1_2_3_4_Z 
   4_5_6_1_Z 
@@ -74,9 +71,6 @@ f_m_ct {
   8_9_10_2_Z 
   7_11_12_13_Z 
   -539.907345487853
-  jag_batch_spe_B3LYP-D3_6-31Gss_canonical1 
-  jag_batch_spe_B3LYP-D3_6-31Gss_canonical1 
-  0
   2
  m_depend[23] { 
   # First column is dependency index #

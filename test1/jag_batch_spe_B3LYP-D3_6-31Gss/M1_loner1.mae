@@ -30,17 +30,15 @@ f_m_ct {
  s_m_job_name
  i_j_Geometry_convergence_category
  s_j_jname
- s_m_subgroup_title
- s_m_subgroupid
- b_m_subgroup_collapsed
+ i_m_Molecular_charge
  i_m_ct_format
  :::
  M1 
-  3 
+  1 
   entry 
   0
   0
-  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/recursive_stereo/test_sets 
+  /Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/recursive_stereo/2019-10-25/test1 
   M1.mae 
   1
   1
@@ -60,8 +58,6 @@ f_m_ct {
   jag_batch_opt_B3LYP_6-31Gss_3 
   0
   M1_6-31Gss_1_B3LYP_loner1 
-  jag_batch_opt_B3LYP_6-31Gss_3_canonical1 
-  jag_batch_opt_B3LYP_6-31Gss_3_canonical1 
   0
   2
  m_depend[16] { 

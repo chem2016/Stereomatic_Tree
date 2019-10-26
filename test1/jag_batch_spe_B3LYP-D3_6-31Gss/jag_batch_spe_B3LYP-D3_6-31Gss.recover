@@ -1,0 +1,27 @@
+Name: 'jag_batch_spe_B3LYP-D3_6-31Gss'
+JobId: 'Haoyus-MacBook-Pro-3-0-5db46142'
+Commandline: '/opt/schrodinger/suites2019-3/jaguar run canonical.py -jobname=jag_batch_spe_B3LYP-D3_6-31Gss -keyword=basis=6-31G** -keyword=icfit=1 -keyword=dftname=B3LYP-D3 jag_batch_spe_B3LYP-D3_6-31Gss.mae -HOST localhost -PARALLEL 2 -PROJ /var/folders/0p/01ddr7yj7pl293p0h3lc4qrw0000gn/T/haoyuyu/tproj54422a1325 -DISP append -VIEWNAME jaguar_gui_dir.single_point_energy.SinglePointEnergy -TMPLAUNCHDIR'
+BackendCmdline: 'run canonical.py -jobname jag_batch_spe_B3LYP-D3_6-31Gss -PARALLEL 2 -keyword basis=6-31G** -keyword icfit=1 -keyword dftname=B3LYP-D3 jag_batch_spe_B3LYP-D3_6-31Gss.mae'
+Outfiles:
+- ".write_dir.json"
+- "M1_loner1.in"
+- "M1_loner1.mae"
+- "M1_loner1.01.mae"
+- "M1_loner1.01.mae"
+- "M1_loner1.01.in"
+- "M1_loner1.out"
+- "M1_loner1.log"
+- "M1_loner1.recover"
+- "M1_loner1.01.mae"
+- ".write_dir.json"
+- "M2_loner2.in"
+- "M2_loner2.mae"
+- "M2_loner2.01.mae"
+- "M2_loner2.01.mae"
+- "M2_loner2.01.in"
+- "M2_loner2.log"
+- "M2_loner2.recover"
+- "M2_loner2.out"
+- "M2_loner2.01.mae"
+- "jag_batch_spe_B3LYP-D3_6-31Gss_canonical.mae"
+- "jag_batch_spe_B3LYP-D3_6-31Gss_canonical.smap"

@@ -7,7 +7,7 @@ import argparse
 import tracemalloc
 from schrodinger.infra import mm
 from schrodinger.structure import StructureReader
-from generate_stereomatic_step1 import stereomatic_descriptor
+from generate_stereomatic import stereomatic_descriptor
 
 def parse_args():
     """
@@ -46,6 +46,14 @@ def parse_args():
         dest='level',
         type=int,
         help='the level of the overlap one wants to calculate'
+    )
+
+    parser.add_argument(
+        '-charge',
+        default=False,
+        dest='charge',
+        action='store_true',
+        help='using ESP charge to differentiate molecules'
     )
 
     parser.add_argument(
@@ -128,14 +136,13 @@ def get_nodes_by_level(root, k, array):
     if root is None:
         return
     if k == 0:
-        # print(root)
         array.append(root)
     else:
         for child in root.children:
             get_nodes_by_level(child, k-1, array)
 
 
-def get_stereomatic_desc(st, tree, sorted_atoms):
+def get_stereomatic_desc(st, tree, sorted_atoms, charge):
     """
     A function to update all the nodes of a tree with stereomatic value
 
@@ -144,21 +151,23 @@ def get_stereomatic_desc(st, tree, sorted_atoms):
 
     :type  tree: Node
     :param tree: The tree structure of st
+
+    :type  charge: bool
+    :param charge: use ESP charge for atomic descriptor
     """
 
     origin = tree.idx
-    # print(tree)
-    # for at in st.atom:
     for at in sorted_atoms:
         value = get_bond_order(st, st.atom[origin], at)
         if value > 0.5:
             if at.index not in tree.visited:
-#                print('adding ', at.index, at.element)
-                tree.insert(value, at.index, at.element, at.partial_charge, origin, tree.visited)
+                if charge:
+                    tree.insert(value, at.index, at.element, at.property['r_j_ESP_Charges'], origin, tree.visited)
+                else:
+                    tree.insert(value, at.index, at.element, 0, origin, tree.visited)
 
     for child in tree.children:
-#        print(f'child {child.idx} of {origin} \n', child)
-        get_stereomatic_desc(st, child, sorted_atoms)
+        get_stereomatic_desc(st, child, sorted_atoms, charge)
 
 def sum_bonded_atomic(atom):
     """
@@ -179,7 +188,7 @@ def sort_atom_by_atomic(st):
     
     return sorted(retArr, key=lambda atom: (atom.atomic_number, sum_bonded_atomic(atom)))
 
-def calculate_overlap(arr1, arr2):
+def calculate_overlap_geometry(arr1, arr2):
     """
     A function to calculate two arrays of nodes with same dimension
 
@@ -192,7 +201,20 @@ def calculate_overlap(arr1, arr2):
 
     return sum
 
-def generate_tree(maefile, origin):
+def calculate_overlap_charge(arr1, arr2):
+    """
+    A function to calculate two arrays of nodes with same dimension
+
+    arr1: [node1, node2, node3, etc]
+    arr2: [node1, node2, node3, etc]
+    """
+    sum = 0
+    for node1, node2 in zip(arr1, arr2):
+        sum += (node1.charge - node2.charge) * (node1.charge - node2.charge)
+
+    return sum
+
+def generate_tree(maefile, origin, charge):
     """
     A helper function to generate tree structure from a given maefile and origin
 
@@ -202,14 +224,23 @@ def generate_tree(maefile, origin):
     :type  origin: int
     :param origin: atom of interest
 
+    :type  charge: bool
+    :param charge: use ESP charge for atomic descriptor
+
     return tree structure
     """
     print(f'Processing {maefile}')
     st = next(StructureReader(maefile))
     sorted_atoms = sort_atom_by_atomic(st)
     print(f'Using atom {origin} ({st.atom[origin].element}) as origin.\n')
-    root = Node(None, origin, st.atom[origin].element, st.atom[origin].partial_charge, None, set())
-    get_stereomatic_desc(st, root, sorted_atoms)
+    if charge:
+        try:
+            root = Node(None, origin, st.atom[origin].element, st.atom[origin].property['r_j_ESP_Charges'], None, set())
+        except:
+            sys.exit('Warning: You need to have ESP charge in the maefile in order to run charge option!!!')
+    else:
+        root = Node(None, origin, st.atom[origin].element, 0, None, set())
+    get_stereomatic_desc(st, root, sorted_atoms, charge)
 
     return root
 
@@ -225,7 +256,6 @@ def pack_array(arr1, arr2):
     """
     A function to pack two arrays with new Nodes to ensure same dimensitionality
     """
-    # for item1, item2 in itertools.zip_longest(arr1, arr2, fillvalue=Node(0, origin, st.atom[origin].element, charge, None, set())): 
 
     retArr1 = []
     retArr2 = []
@@ -258,18 +288,22 @@ def main():
     origin1, origin2 = args.atom_pair
     maefile2 = args.st_2
     level = args.level
+    charge = args.charge
 
-    tree1 = generate_tree(maefile1, origin1)
-    tree2 = generate_tree(maefile2, origin2)
+    tree1 = generate_tree(maefile1, origin1, charge)
+    tree2 = generate_tree(maefile2, origin2, charge)
 
-    # Index of atom origin of stereomatic network
     retArr1, retArr2 = [], []
     get_nodes_by_level(tree1, level, retArr1)
     get_nodes_by_level(tree2, level, retArr2)
     arr1_packed, arr2_packed = pack_array(retArr1, retArr2)
-    difference = calculate_overlap(arr1_packed, arr2_packed)
-    overlap = np.exp(-difference)
-    print(overlap)
+    difference_geometry = calculate_overlap_geometry(arr1_packed, arr2_packed)
+    if charge:
+        difference_charge = calculate_overlap_charge(arr1_packed, arr2_packed)
+        overlap_charge = np.exp(-difference_charge)
+        print('overlap_charge: ', overlap_charge)
+    overlap_geometry = np.exp(-difference_geometry)
+    print("overlap_geometry: ", overlap_geometry)
 
     if args.debug:
         print('nodes from tree1: --------------------')
