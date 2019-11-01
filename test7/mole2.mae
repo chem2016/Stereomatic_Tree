@@ -12,23 +12,88 @@ f_m_ct {
  r_f3d_energy
  s_st_Chirality_1
  s_st_Chirality_2
+ s_m_Source_Path
+ s_m_Source_File
+ i_m_Source_File_Index
+ i_m_Spin_multiplicity
+ s_j_Task
+ s_j_Jaguar_input_file
+ s_j_Jaguar_restart_input_file
+ s_j_Jaguar_restart_mae_file
+ s_j_Jaguar_output_file
+ s_j_Jaguar_log_file
+ s_j_Jaguar_mae_file
+ s_j_QM_Method
+ s_j_QM_Basis
+ i_j_Number_of_canonical_orbitals
+ i_j_Geometry_convergence_category
+ r_j_Gas_Phase_Energy
+ r_j_Final_Energy
+ r_j_HOMO
+ r_j_LUMO
+ s_j_jname
+ s_m_job_name
+ s_m_subgroup_title
+ s_m_subgroupid
+ b_m_subgroup_collapsed
  i_m_ct_format
  :::
  mole2 
-  10 
+  5 
   entry 
   0
   0
   1_S_4_2_3_6 
   2_S_5_1_3_7 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/test7 
+  mole2.mae 
+  1
+  1
+  Optimization 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss/mole2_isomer2.in 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss/mole2_isomer2.01.in 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss/mole2_isomer2.01.mae 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss/mole2_isomer2.out 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss/mole2_isomer2.log 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss/mole2_isomer2.mae 
+  DFT(b3lyp-d3) 
+  6-31g** 
+  105
+  0
+  -268.3313763574
+  -268.3313763574
+  -0.241080848808357
+  0.0765539861137214
+  mole2_isomer2 
+  jag_batch_opt_B3LYP-D3_6-31Gss 
+  jag_batch_opt_B3LYP-D3_6-31Gss_canonical1 
+  jag_batch_opt_B3LYP-D3_6-31Gss_canonical1 
+  0
   2
- m_depend[2] { 
+ m_depend[19] { 
   # First column is dependency index #
   i_m_depend_dependency
   s_m_depend_property
   :::
   1 10 s_st_Chirality_1 
   2 10 s_st_Chirality_2 
+  3 20 i_m_Spin_multiplicity 
+  4 20 s_j_Task 
+  5 20 s_j_Jaguar_input_file 
+  6 20 s_j_Jaguar_restart_input_file 
+  7 20 s_j_Jaguar_restart_mae_file 
+  8 20 s_j_Jaguar_output_file 
+  9 20 s_j_Jaguar_log_file 
+  10 20 s_j_Jaguar_mae_file 
+  11 20 s_j_QM_Method 
+  12 20 s_j_QM_Basis 
+  13 20 i_j_Number_of_canonical_orbitals 
+  14 20 i_j_Geometry_convergence_category 
+  15 20 r_j_Gas_Phase_Energy 
+  16 20 r_j_Final_Energy 
+  17 20 r_j_HOMO 
+  18 20 r_j_LUMO 
+  19 30 s_m_job_name 
   :::
  } 
  m_atom[11] { 
@@ -39,25 +104,28 @@ f_m_ct {
   r_m_z_coord
   i_m_residue_number
   i_m_color
+  r_m_charge1
+  r_m_charge2
   i_m_atomic_number
-  i_m_visibility
   s_m_color_rgb
+  s_m_atom_name
   s_m_label_format
   i_m_label_color
   s_m_label_user_text
+  r_j_ESP_Charges
   i_sd_original_parity
   :::
-  1 3 0.000000 0.000000 0.000000 900 2 6 0 A0A0A0  %NM  5 ""  2
-  2 3 -0.730067 -1.086965 0.755976 900 2 6 0 A0A0A0  %NM  5 ""  2
-  3 3 -0.730066 -1.086966 -0.755973 900 2 6 0 A0A0A0  %NM  5 ""  <>
-  4 16 1.380000 0.000000 0.000000 900 70 8 0 FF2F2F  %NM  5 ""  <>
-  5 16 -1.895561 -0.767597 1.422329 900 70 8 0 FF2F2F  %NM  5 ""  <>
-  6 41 -0.413089 1.010985 0.000000 900 21 1 0 FFFFFF  %NM  5 ""  <>
-  7 41 -0.147219 -1.845203 1.283323 900 21 1 0 FFFFFF  %NM  5 ""  <>
-  8 41 -0.147219 -1.845205 -1.283321 900 21 1 0 FFFFFF  %NM  5 ""  <>
-  9 41 -1.652431 -0.834221 -1.283321 900 21 1 0 FFFFFF  %NM  5 ""  <>
-  10 42 1.802618 0.906308 0.000000 900 21 1 0 FFFFFF  %NM  5 ""  <>
-  11 42 -2.042744 -1.263821 2.277957 900 21 1 0 FFFFFF  %NM  5 ""  <>
+  1 3 -0.088750 0.750959 0.067207 900 2 0.08487 0.08487 6 A0A0A0  C1  %NM  2 ""  0.08486522833136 2
+  2 3 0.088750 -0.750959 0.067207 900 2 0.08487 0.08487 6 A0A0A0  C2  %NM  2 ""  0.08486522833136 2
+  3 3 0.000000 0.000000 -1.232070 900 2 -0.23660 -0.23660 6 A0A0A0  C3  %NM  2 ""  -0.236595565239138 <>
+  4 16 1.004480 1.577375 0.366255 900 70 -0.52571 -0.52571 8 FF2F2F  O4  %NM  2 ""  -0.525711775266522 <>
+  5 16 -1.004480 -1.577375 0.366255 900 70 -0.52571 -0.52571 8 FF2F2F  O5  %NM  2 ""  -0.525711775266522 <>
+  6 41 -1.072937 1.125308 0.357448 900 21 0.06987 0.06987 1 FFFFFF  H6  %NM  2 ""  0.0698672843789869 <>
+  7 41 1.072937 -1.125308 0.357448 900 21 0.06987 0.06987 1 FFFFFF  H7  %NM  2 ""  0.0698672843789869 <>
+  8 41 0.911918 0.124372 -1.806795 900 21 0.12652 0.12652 1 FFFFFF  H8  %NM  2 ""  0.126523422409509 <>
+  9 41 -0.911918 -0.124372 -1.806795 900 21 0.12652 0.12652 1 FFFFFF  H9  %NM  2 ""  0.126523422409509 <>
+  10 42 1.122455 1.575356 1.325593 900 21 0.36275 0.36275 1 FFFFFF  H10  %NM  2 ""  0.362753622766235 <>
+  11 42 -1.122455 -1.575356 1.325593 900 21 0.36275 0.36275 1 FFFFFF  H11  %NM  2 ""  0.362753622766235 <>
   :::
  } 
  m_bond[13] { 

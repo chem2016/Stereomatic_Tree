@@ -1,0 +1,71 @@
+Command:    /opt/schrodinger/suites2019-3/jaguar run canonical.py -jobname=jag_batch_opt_B3LYP-D3_6-31Gss_2 -keyword=basis=6-31G** -keyword=igeopt=1 -keyword=icfit=1 -keyword=dftname=B3LYP-D3 jag_batch_opt_B3LYP-D3_6-31Gss_2.mae -HOST localhost -PARALLEL 2 -PROJ /var/folders/v4/ywsggxsn1dx3spvsvvjpq8d00000gp/T/hyu/tproj61197a6876 -DISP append -VIEWNAME jaguar_gui_dir.optimization.Optimization -TMPLAUNCHDIR
+Release:    2019-3
+Exec:       /opt/schrodinger/suites2019-3/jaguar-v10.5/bin/Darwin-x86_64
+Host:       haoyus-mbp.schrodinger.com
+JobId:      haoyus-mbp-0-5db9ce24
+JobDir:     /Users/hyu/.schrodinger/tmp/jag_batch_opt_B3LYP-D3_6-31Gss_2
+Date:       Wed Oct 30 13:53:41 2019
+
+Contents of /Users/hyu/.schrodinger/tmp/jag_batch_opt_B3LYP-D3_6-31Gss_2:
+/Users/hyu/.schrodinger/tmp/jag_batch_opt_B3LYP-D3_6-31Gss_2/jag_batch_opt_B3LYP-D3_6-31Gss_2.log
+/Users/hyu/.schrodinger/tmp/jag_batch_opt_B3LYP-D3_6-31Gss_2/.write_dir.json
+/Users/hyu/.schrodinger/tmp/jag_batch_opt_B3LYP-D3_6-31Gss_2/jag_batch_opt_B3LYP-D3_6-31Gss_2.mae
+/Users/hyu/.schrodinger/tmp/jag_batch_opt_B3LYP-D3_6-31Gss_2/haoyus-mbp-0-5db9ce24.mpinodes
+/Users/hyu/.schrodinger/tmp/jag_batch_opt_B3LYP-D3_6-31Gss_2/haoyus-mbp-0-5db9ce24.recover
+/Users/hyu/.schrodinger/tmp/jag_batch_opt_B3LYP-D3_6-31Gss_2/haoyus-mbp-0-5db9ce24
+/Users/hyu/.schrodinger/tmp/jag_batch_opt_B3LYP-D3_6-31Gss_2/jag_batch_opt_B3LYP-D3_6-31Gss_2.recover
+
+-----------------------
+ canonical.py workflow
+-----------------------
+There are 3 structures of which 0 are isomers.
+1 keyword combinations were requested.
+0 setup calculations will be done (on the isomers).
+3 final calculations will be done.
+
+Running 3 final calculations...
+
+Executing 3 distributed subjobs:
+---------------------------------
+
+No more than 2 subjob(s) will be launched simultaneously.
+No more than 2 cpu(s) will be used simultaneously.
+
+Processing the following subjobs:
+(1) jaguar run cmp1_loner1.in
+(2) jaguar run cmp2_loner2.in
+(3) jaguar run cmp3_loner3.in
+
+Running subjobs on hosts:
+  localhost (Max: 2)
+Number of jobs:       3
+Max retries per job:  3
+Max allowed failures: unlimited
+Run with -LOCAL:      False
+Verbosity:            normal
+
+Starting JobDJ...
+
+Keep one job on driver host: False
+JobDJ columns:
+  C: Number of completed subjobs
+  A: Number of active subjobs (e.g., submitted, running)
+  W: Number of waiting/pending subjobs
+
+C A W | Activity  JobId  JobName  JobHost
+- - - | --------- -----------------------
+0 1 2 | launched  haoyus-mbp-0-5db9ce27 cmp1_loner1 localhost [haoyus-mbp]
+0 2 1 | launched  haoyus-mbp-0-5db9ce28 cmp2_loner2 localhost [haoyus-mbp]
+1 1 1 | finished  haoyus-mbp-0-5db9ce27 cmp1_loner1 localhost [haoyus-mbp]
+1 2 0 | launched  haoyus-mbp-0-5db9ce48 cmp3_loner3 localhost [haoyus-mbp]
+2 1 0 | finished  haoyus-mbp-0-5db9ce28 cmp2_loner2 localhost [haoyus-mbp]
+3 0 0 | finished  haoyus-mbp-0-5db9ce48 cmp3_loner3 localhost [haoyus-mbp]
+
+All jobs have completed.
+
+3 of 3 job(s) succeeded; 0 job(s) failed.
+
+Timer (distribute subjobs) : 57.06 secs
+Timer (jaguar_backend.py) : 57.11 secs
+Finished:   Wed Oct 30 13:54:39 2019
+[running at reduced cpu priority]

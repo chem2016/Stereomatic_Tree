@@ -1,0 +1,10 @@
+Name: 'cmp2_loner2'
+JobId: 'haoyus-mbp-0-5db9ce28'
+Commandline: '/opt/schrodinger/suites2019-3/jaguar run cmp2_loner2.in -HOST localhost'
+BackendCmdline: 'run jexec.py -jobname cmp2_loner2 cmp2_loner2.in'
+Outfiles:
+- "cmp2_loner2.out"
+- "cmp2_loner2.recover"
+- "cmp2_loner2.log"
+- "cmp2_loner2.01.in"
+- "cmp2_loner2.01.mae"

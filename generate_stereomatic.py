@@ -6,8 +6,12 @@ import numpy as np
 from scipy.special import erf
 import json
 
-with open("/Users/haoyuyu/Documents/Schrodinger/Jaguar/pKa_program/NEW_LAD/recursive_stereo/2019-10-25/new_bond_data.json", 'r') as fh:
-    new_bond_data_dict = json.load(fh)
+try:
+    with open("/Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/new_bond_data.json", 'r') as fh:
+        new_bond_data_dict = json.load(fh)
+except:
+    with open("new_bond_data.json", 'r') as fh:
+        new_bond_data_dict = json.load(fh)
 
 def sigmoid_function(c, s, shift, x):
     """

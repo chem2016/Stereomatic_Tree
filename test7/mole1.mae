@@ -17,13 +17,34 @@ f_m_ct {
  s_st_Chirality_5
  s_st_Chirality_6
  s_st_Chirality_7
+ s_m_Source_Path
+ s_m_Source_File
+ i_m_Source_File_Index
+ i_m_Spin_multiplicity
+ s_j_Task
+ s_j_Jaguar_input_file
+ s_j_Jaguar_restart_input_file
+ s_j_Jaguar_restart_mae_file
+ s_j_Jaguar_output_file
+ s_j_Jaguar_log_file
+ s_j_Jaguar_mae_file
+ s_j_QM_Method
+ s_j_QM_Basis
+ i_j_Number_of_canonical_orbitals
+ i_j_Geometry_convergence_category
+ r_j_Gas_Phase_Energy
+ r_j_Final_Energy
+ r_j_HOMO
+ r_j_LUMO
+ s_j_jname
+ s_m_job_name
  s_m_subgroup_title
  s_m_subgroupid
  b_m_subgroup_collapsed
  i_m_ct_format
  :::
  mole1 
-  7 
+  4 
   entry_mol1 
   0
   0
@@ -34,11 +55,32 @@ f_m_ct {
   11_S_16_13_12_29 
   12_ANS_11_13_14_30 
   13_S_15_11_12_31 
-  Structure6_split_by_molecule 
-  Structure6_split_by_molecule 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/test7 
+  mole1.mae 
+  1
+  1
+  Optimization 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss/mole1_isomer1.in 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss/mole1_isomer1.01.in 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss/mole1_isomer1.01.mae 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss/mole1_isomer1.out 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss/mole1_isomer1.log 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss/mole1_isomer1.mae 
+  DFT(b3lyp-d3) 
+  6-31g** 
+  105
+  0
+  -268.328090682891
+  -268.328090682891
+  -0.244858307137303
+  0.0501913663202396
+  mole1_isomer1 
+  jag_batch_opt_B3LYP-D3_6-31Gss 
+  jag_batch_opt_B3LYP-D3_6-31Gss_canonical1 
+  jag_batch_opt_B3LYP-D3_6-31Gss_canonical1 
   0
   2
- m_depend[7] { 
+ m_depend[24] { 
   # First column is dependency index #
   i_m_depend_dependency
   s_m_depend_property
@@ -50,6 +92,23 @@ f_m_ct {
   5 10 s_st_Chirality_5 
   6 10 s_st_Chirality_6 
   7 10 s_st_Chirality_7 
+  8 20 i_m_Spin_multiplicity 
+  9 20 s_j_Task 
+  10 20 s_j_Jaguar_input_file 
+  11 20 s_j_Jaguar_restart_input_file 
+  12 20 s_j_Jaguar_restart_mae_file 
+  13 20 s_j_Jaguar_output_file 
+  14 20 s_j_Jaguar_log_file 
+  15 20 s_j_Jaguar_mae_file 
+  16 20 s_j_QM_Method 
+  17 20 s_j_QM_Basis 
+  18 20 i_j_Number_of_canonical_orbitals 
+  19 20 i_j_Geometry_convergence_category 
+  20 20 r_j_Gas_Phase_Energy 
+  21 20 r_j_Final_Energy 
+  22 20 r_j_HOMO 
+  23 20 r_j_LUMO 
+  24 30 s_m_job_name 
   :::
  } 
  m_atom[11] { 
@@ -60,25 +119,29 @@ f_m_ct {
   r_m_z_coord
   i_m_residue_number
   i_m_color
+  r_m_charge1
+  r_m_charge2
   i_m_atomic_number
   s_m_color_rgb
+  s_m_atom_name
   s_m_label_format
   i_m_label_color
   s_m_label_user_text
+  r_j_ESP_Charges
   i_sd_original_parity
   b_st_NoSrcChirality
   :::
-  1 3 0.000000 0.000000 0.000000 900 2 6 A0A0A0  %NM  5 ""  2 1
-  2 3 -0.730067 -1.086965 0.755976 900 2 6 A0A0A0  %NM  5 ""  <> <>
-  3 3 -0.730066 -1.086966 -0.755973 900 2 6 A0A0A0  %NM  5 ""  2 1
-  4 16 1.380000 0.000000 0.000000 900 70 8 FF2F2F  %NM  5 ""  <> <>
-  5 16 0.006416 -2.045072 -1.422326 900 70 8 FF2F2F  %NM  5 ""  <> <>
-  6 41 -0.413089 1.010985 0.000000 900 21 1 FFFFFF  %NM  5 ""  <> <>
-  7 41 -1.652431 -0.834219 1.283323 900 21 1 FFFFFF  %NM  5 ""  <> <>
-  8 41 -0.147219 -1.845203 1.283323 900 21 1 FFFFFF  %NM  5 ""  <> <>
-  9 41 -1.652431 -0.834221 -1.283321 900 21 1 FFFFFF  %NM  5 ""  <> <>
-  10 42 1.802618 0.906308 0.000000 900 21 1 FFFFFF  %NM  5 ""  <> <>
-  11 42 -0.397271 -2.369015 -2.277953 900 21 1 FFFFFF  %NM  5 ""  <> <>
+  1 3 0.533373 -0.058172 0.760683 900 2 0.05478 0.05478 6 A0A0A0  C1  %NM  2 ""  0.0547776434212381 2 1
+  2 3 0.515294 1.237898 0.000000 900 2 -0.14747 -0.14747 6 A0A0A0  C2  %NM  2 ""  -0.147467655160556 <> <>
+  3 3 0.533373 -0.058172 -0.760683 900 2 0.05478 0.05478 6 A0A0A0  C3  %NM  2 ""  0.0547776434212381 2 1
+  4 16 -0.644713 -0.374388 1.448153 900 70 -0.51948 -0.51948 8 FF2F2F  O4  %NM  2 ""  -0.519475414972627 <> <>
+  5 16 -0.644713 -0.374388 -1.448153 900 70 -0.51948 -0.51948 8 FF2F2F  O5  %NM  2 ""  -0.519475414972627 <> <>
+  6 41 1.460914 -0.343664 1.262554 900 21 0.05883 0.05883 1 FFFFFF  H6  %NM  2 ""  0.0588302104643232 <> <>
+  7 41 1.393634 1.875323 0.000000 900 21 0.06948 0.06948 1 FFFFFF  H7  %NM  2 ""  0.0694825011420739 <> <>
+  8 41 -0.441660 1.750238 0.000000 900 21 0.13940 0.13940 1 FFFFFF  H8  %NM  2 ""  0.139398339400782 <> <>
+  9 41 1.460914 -0.343664 -1.262554 900 21 0.05883 0.05883 1 FFFFFF  H9  %NM  2 ""  0.0588302104643232 <> <>
+  10 42 -0.777287 -1.329930 1.388209 900 21 0.37516 0.37516 1 FFFFFF  H10  %NM  2 ""  0.375160968395916 <> <>
+  11 42 -0.777287 -1.329930 -1.388209 900 21 0.37516 0.37516 1 FFFFFF  H11  %NM  2 ""  0.375160968395916 <> <>
   :::
  } 
  m_bond[13] { 

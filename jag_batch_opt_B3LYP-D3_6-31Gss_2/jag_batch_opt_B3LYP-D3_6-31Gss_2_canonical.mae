@@ -1,0 +1,354 @@
+{ 
+ s_m_m2io_version
+ :::
+ 2.0.0 
+} 
+
+f_m_ct { 
+ s_m_title
+ s_m_entry_id
+ s_m_entry_name
+ i_m_Spin_multiplicity
+ s_j_Task
+ s_j_Jaguar_input_file
+ s_j_Jaguar_restart_input_file
+ s_j_Jaguar_restart_mae_file
+ s_j_Jaguar_output_file
+ s_j_Jaguar_log_file
+ s_j_Jaguar_mae_file
+ s_j_QM_Method
+ s_j_QM_Basis
+ i_j_Number_of_canonical_orbitals
+ i_j_Geometry_convergence_category
+ r_j_Gas_Phase_Energy
+ r_j_Final_Energy
+ r_j_HOMO
+ r_j_LUMO
+ s_j_jname
+ i_m_ct_format
+ :::
+ cmp1 
+  7 
+  entry 
+  1
+  Optimization 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp1_loner1.in 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp1_loner1.01.in 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp1_loner1.01.mae 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp1_loner1.out 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp1_loner1.log 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp1_loner1.mae 
+  DFT(b3lyp-d3) 
+  6-31g** 
+  80
+  0
+  -135.177512319698
+  -135.177512319698
+  -0.21515214716523
+  0.087194022212885
+  cmp1_loner1 
+  2
+ m_depend[16] { 
+  # First column is dependency index #
+  i_m_depend_dependency
+  s_m_depend_property
+  :::
+  1 20 i_m_Spin_multiplicity 
+  2 20 s_j_Task 
+  3 20 s_j_Jaguar_input_file 
+  4 20 s_j_Jaguar_restart_input_file 
+  5 20 s_j_Jaguar_restart_mae_file 
+  6 20 s_j_Jaguar_output_file 
+  7 20 s_j_Jaguar_log_file 
+  8 20 s_j_Jaguar_mae_file 
+  9 20 s_j_QM_Method 
+  10 20 s_j_QM_Basis 
+  11 20 i_j_Number_of_canonical_orbitals 
+  12 20 i_j_Geometry_convergence_category 
+  13 20 r_j_Gas_Phase_Energy 
+  14 20 r_j_Final_Energy 
+  15 20 r_j_HOMO 
+  16 20 r_j_LUMO 
+  :::
+ } 
+ m_atom[10] { 
+  # First column is atom index #
+  i_m_mmod_type
+  r_m_x_coord
+  r_m_y_coord
+  r_m_z_coord
+  i_m_color
+  r_m_charge1
+  r_m_charge2
+  i_m_atomic_number
+  s_m_color_rgb
+  s_m_atom_name
+  r_j_ESP_Charges
+  i_rdk_index
+  :::
+  1 26 0.050299 0.551668 -0.000000 43 -0.65841 -0.65841 7 5757FF  N1  -0.658406836249699 0
+  2 3 -0.000226 -0.254060 1.213113 2 0.02592 0.02592 6 A0A0A0  C2  0.0259204658462251 1
+  3 3 -0.000226 -0.254060 -1.213113 2 0.02592 0.02592 6 A0A0A0  C3  0.0259204658462251 2
+  4 43 -0.729085 1.204490 -0.000000 21 0.35418 0.35418 1 FFFFFF  H4  0.354183016648594 <>
+  5 41 -0.018098 0.398726 2.091457 21 0.04026 0.04026 1 FFFFFF  H5  0.0402639700857819 <>
+  6 41 -0.868449 -0.937906 1.273390 21 0.01704 0.01704 1 FFFFFF  H6  0.0170435259349496 <>
+  7 41 0.904350 -0.870548 1.277266 21 0.06888 0.06888 1 FFFFFF  H7  0.0688839479335961 <>
+  8 41 -0.018098 0.398726 -2.091457 21 0.04026 0.04026 1 FFFFFF  H8  0.0402639700857819 <>
+  9 41 0.904350 -0.870548 -1.277266 21 0.06888 0.06888 1 FFFFFF  H9  0.0688839479335961 <>
+  10 41 -0.868449 -0.937906 -1.273390 21 0.01704 0.01704 1 FFFFFF  H10  0.0170435259349496 <>
+  :::
+ } 
+ m_bond[9] { 
+  # First column is bond index #
+  i_m_from
+  i_m_to
+  i_m_order
+  :::
+  1 1 2 1
+  2 1 3 1
+  3 1 4 1
+  4 2 5 1
+  5 2 6 1
+  6 2 7 1
+  7 3 8 1
+  8 3 9 1
+  9 3 10 1
+  :::
+ } 
+} 
+
+f_m_ct { 
+ s_m_title
+ s_m_entry_id
+ s_m_entry_name
+ i_m_Spin_multiplicity
+ s_j_Task
+ s_j_Jaguar_input_file
+ s_j_Jaguar_restart_input_file
+ s_j_Jaguar_restart_mae_file
+ s_j_Jaguar_output_file
+ s_j_Jaguar_log_file
+ s_j_Jaguar_mae_file
+ s_j_QM_Method
+ s_j_QM_Basis
+ i_j_Number_of_canonical_orbitals
+ i_j_Geometry_convergence_category
+ r_j_Gas_Phase_Energy
+ r_j_Final_Energy
+ r_j_HOMO
+ r_j_LUMO
+ s_j_jname
+ i_m_ct_format
+ :::
+ cmp2 
+  8 
+  entry 
+  1
+  Optimization 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp2_loner2.in 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp2_loner2.01.in 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp2_loner2.01.mae 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp2_loner2.out 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp2_loner2.log 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp2_loner2.mae 
+  DFT(b3lyp-d3) 
+  6-31g** 
+  130
+  3
+  -213.821529814215
+  -213.821529814215
+  -0.214990152884281
+  0.0889215521897812
+  cmp2_loner2 
+  2
+ m_depend[16] { 
+  # First column is dependency index #
+  i_m_depend_dependency
+  s_m_depend_property
+  :::
+  1 20 i_m_Spin_multiplicity 
+  2 20 s_j_Task 
+  3 20 s_j_Jaguar_input_file 
+  4 20 s_j_Jaguar_restart_input_file 
+  5 20 s_j_Jaguar_restart_mae_file 
+  6 20 s_j_Jaguar_output_file 
+  7 20 s_j_Jaguar_log_file 
+  8 20 s_j_Jaguar_mae_file 
+  9 20 s_j_QM_Method 
+  10 20 s_j_QM_Basis 
+  11 20 i_j_Number_of_canonical_orbitals 
+  12 20 i_j_Geometry_convergence_category 
+  13 20 r_j_Gas_Phase_Energy 
+  14 20 r_j_Final_Energy 
+  15 20 r_j_HOMO 
+  16 20 r_j_LUMO 
+  :::
+ } 
+ m_atom[16] { 
+  # First column is atom index #
+  i_m_mmod_type
+  r_m_x_coord
+  r_m_y_coord
+  r_m_z_coord
+  i_m_color
+  r_m_charge1
+  r_m_charge2
+  i_m_atomic_number
+  s_m_color_rgb
+  s_m_atom_name
+  r_j_ESP_Charges
+  i_rdk_index
+  :::
+  1 26 0.051753 -0.273080 -0.000000 43 -0.76477 -0.76477 7 5757FF  N1  -0.764773595545853 0
+  2 3 -0.001190 0.523864 -1.222893 2 0.36069 0.36069 6 A0A0A0  C2  0.360693085130357 1
+  3 3 -0.001190 0.523864 1.222893 2 0.36069 0.36069 6 A0A0A0  C3  0.360693085130357 2
+  4 3 0.001417 -0.372882 2.458608 2 -0.30357 -0.30357 6 A0A0A0  C4  -0.303568360916178 3
+  5 3 0.001417 -0.372882 -2.458608 2 -0.30357 -0.30357 6 A0A0A0  C5  -0.303568360916178 4
+  6 43 -0.731254 -0.925772 -0.000000 21 0.32689 0.32689 1 FFFFFF  H6  0.32689012628369 <>
+  7 41 -0.877975 1.201094 -1.256450 21 -0.05938 -0.05938 1 FFFFFF  H7  -0.0593792237858808 <>
+  8 41 0.884513 1.173189 -1.237198 21 -0.00275 -0.00275 1 FFFFFF  H8  -0.00274535574207405 <>
+  9 41 0.884513 1.173189 1.237198 21 -0.00275 -0.00275 1 FFFFFF  H9  -0.00274535574207405 <>
+  10 41 -0.877975 1.201094 1.256450 21 -0.05938 -0.05938 1 FFFFFF  H10  -0.0593792237858808 <>
+  11 41 0.005512 0.222921 3.376656 21 0.06297 0.06297 1 FFFFFF  H11  0.0629691788632061 <>
+  12 41 -0.889826 -1.011888 2.482509 21 0.07748 0.07748 1 FFFFFF  H12  0.0774845358397062 <>
+  13 41 0.881169 -1.023014 2.457377 21 0.08349 0.08349 1 FFFFFF  H13  0.083487875241946 <>
+  14 41 0.005512 0.222921 -3.376656 21 0.06297 0.06297 1 FFFFFF  H14  0.0629691788632061 <>
+  15 41 0.881169 -1.023014 -2.457377 21 0.08349 0.08349 1 FFFFFF  H15  0.083487875241946 <>
+  16 41 -0.889826 -1.011888 -2.482509 21 0.07748 0.07748 1 FFFFFF  H16  0.0774845358397062 <>
+  :::
+ } 
+ m_bond[15] { 
+  # First column is bond index #
+  i_m_from
+  i_m_to
+  i_m_order
+  :::
+  1 1 2 1
+  2 1 3 1
+  3 1 6 1
+  4 2 5 1
+  5 2 7 1
+  6 2 8 1
+  7 3 4 1
+  8 3 9 1
+  9 3 10 1
+  10 4 11 1
+  11 4 12 1
+  12 4 13 1
+  13 5 14 1
+  14 5 15 1
+  15 5 16 1
+  :::
+ } 
+} 
+
+f_m_ct { 
+ s_m_title
+ s_m_entry_id
+ s_m_entry_name
+ i_m_Spin_multiplicity
+ s_j_Task
+ s_j_Jaguar_input_file
+ s_j_Jaguar_restart_input_file
+ s_j_Jaguar_restart_mae_file
+ s_j_Jaguar_output_file
+ s_j_Jaguar_log_file
+ s_j_Jaguar_mae_file
+ s_j_QM_Method
+ s_j_QM_Basis
+ i_j_Number_of_canonical_orbitals
+ i_j_Geometry_convergence_category
+ r_j_Gas_Phase_Energy
+ r_j_Final_Energy
+ r_j_HOMO
+ r_j_LUMO
+ s_j_jname
+ i_m_ct_format
+ :::
+ cmp3 
+  9 
+  entry 
+  1
+  Optimization 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp3_loner3.in 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp3_loner3.01.in 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp3_loner3.01.mae 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp3_loner3.out 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp3_loner3.log 
+  /Users/hyu/Documents/Projects/Jaguar_stereomatic/Stereomatic_Tree/jag_batch_opt_B3LYP-D3_6-31Gss_2/cmp3_loner3.mae 
+  DFT(b3lyp-d3) 
+  6-31g** 
+  70
+  0
+  -133.930404146921
+  -133.930404146921
+  -0.244304261966753
+  0.0809557204167849
+  cmp3_loner3 
+  2
+ m_depend[16] { 
+  # First column is dependency index #
+  i_m_depend_dependency
+  s_m_depend_property
+  :::
+  1 20 i_m_Spin_multiplicity 
+  2 20 s_j_Task 
+  3 20 s_j_Jaguar_input_file 
+  4 20 s_j_Jaguar_restart_input_file 
+  5 20 s_j_Jaguar_restart_mae_file 
+  6 20 s_j_Jaguar_output_file 
+  7 20 s_j_Jaguar_log_file 
+  8 20 s_j_Jaguar_mae_file 
+  9 20 s_j_QM_Method 
+  10 20 s_j_QM_Basis 
+  11 20 i_j_Number_of_canonical_orbitals 
+  12 20 i_j_Geometry_convergence_category 
+  13 20 r_j_Gas_Phase_Energy 
+  14 20 r_j_Final_Energy 
+  15 20 r_j_HOMO 
+  16 20 r_j_LUMO 
+  :::
+ } 
+ m_atom[8] { 
+  # First column is atom index #
+  i_m_mmod_type
+  r_m_x_coord
+  r_m_y_coord
+  r_m_z_coord
+  i_m_color
+  r_m_charge1
+  r_m_charge2
+  i_m_atomic_number
+  s_m_color_rgb
+  s_m_atom_name
+  r_j_ESP_Charges
+  i_rdk_index
+  :::
+  1 26 -0.159452 0.829478 0.000000 43 -0.53878 -0.53878 7 5757FF  N1  -0.538784357789615 0
+  2 3 0.049063 -0.426266 0.742536 2 -0.17915 -0.17915 6 A0A0A0  C2  -0.179152120608089 1
+  3 3 0.049063 -0.426266 -0.742536 2 -0.17915 -0.17915 6 A0A0A0  C3  -0.179152120608089 2
+  4 43 0.700868 1.376191 0.000000 21 0.35512 0.35512 1 FFFFFF  H4  0.355115278356512 <>
+  5 41 0.995248 -0.590349 1.255877 21 0.12208 0.12208 1 FFFFFF  H5  0.122076165984816 <>
+  6 41 -0.822127 -0.784797 1.285712 21 0.14891 0.14891 1 FFFFFF  H6  0.148910494339825 <>
+  7 41 -0.822127 -0.784797 -1.285712 21 0.14891 0.14891 1 FFFFFF  H7  0.148910494339825 <>
+  8 41 0.995248 -0.590349 -1.255877 21 0.12208 0.12208 1 FFFFFF  H8  0.122076165984816 <>
+  :::
+ } 
+ m_bond[8] { 
+  # First column is bond index #
+  i_m_from
+  i_m_to
+  i_m_order
+  :::
+  1 1 2 1
+  2 1 3 1
+  3 1 4 1
+  4 2 3 1
+  5 2 5 1
+  6 2 6 1
+  7 3 7 1
+  8 3 8 1
+  :::
+ } 
+} 
+
